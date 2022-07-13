@@ -1,12 +1,14 @@
 package reverse_string
 
 func ReverseString(input string) (output string) {
+	inputRunes := []rune(input)
+	length := len(inputRunes)
+	outputRunes := make([]rune, length)
 
-	in_runes := []rune(input)
-	out_runes := make([]rune, len(input))
-	for k, v := range in_runes {
-		out_runes[len(in_runes)-k-1] = v
+	for i, rune := range inputRunes {
+		outputRunes[length-i-1] = rune
 	}
-	output = string(out_runes)
-	return
+
+	output = string(outputRunes)
+	return output
 }
